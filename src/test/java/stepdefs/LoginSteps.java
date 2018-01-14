@@ -1,7 +1,6 @@
 package stepdefs;
 
 import com.quandoo.resources.Base;
-import cucumber.api.PendingException;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;

@@ -2,6 +2,8 @@ package com.quandoo.resources;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -14,7 +16,7 @@ public class Base {
     public static WebDriver driver;
 
     //Info method to print browser name
-    public void chooseBrowserName(String browserName) {
+    public void choosenBrowserName(String browserName) {
         System.out.println("Initializing the choosen browser: " + browserName);
     }
 
@@ -33,11 +35,19 @@ public class Base {
         switch (browserName) {
             case "chrome":
                 driver = new ChromeDriver();
-                chooseBrowserName(browserName);
+                choosenBrowserName(browserName);
                 break;
-             default:
-                 System.out.println("Browser " + browserName + " is invalid, launching Chrome as default choice...");
-                 driver = new ChromeDriver();
+            case "firefox":
+                driver = new FirefoxDriver();
+                choosenBrowserName(browserName);
+                break;
+            case "ie":
+                driver = new InternetExplorerDriver();
+                choosenBrowserName(browserName);
+                break;
+            default:
+                System.out.println("Browser " + browserName + " is invalid, launching Chrome as default choice...");
+                driver = new ChromeDriver();
         }
 
         //Custom wait setup
