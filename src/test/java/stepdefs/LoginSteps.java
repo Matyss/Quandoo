@@ -10,15 +10,12 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import pageObjects.LoginPage;
 
-import java.io.IOException;
-
 public class LoginSteps extends Base {
 
     LoginPage loginPageElements;
 
     @Before
-    public void initElements() throws IOException {
-        driver = initDriver();
+    public void initElements() {
         loginPageElements = PageFactory.initElements(driver, LoginPage.class);
     }
 

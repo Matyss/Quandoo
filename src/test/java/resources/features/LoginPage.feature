@@ -18,6 +18,6 @@ Feature: Login
     And I click on the "Login" button
     Then I should see "<alert>" message
     Examples:
-      | username | password                     | alert                       |
-      | Smith    | SuperSecretPassword!         | Your username is invalid!   |
-      | tomsmith | SuperWrongPass               | Your password is invalid!   |
+      | username | password             | alert                     |
+      | Smith    | SuperSecretPassword! | Your username is invalid! |
+      | tomsmith | SuperWrongPass       | Your password is invalid! |
