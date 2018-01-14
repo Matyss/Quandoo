@@ -9,17 +9,15 @@ Feature: Login
     Then I should see title "Login Page"
 
   Scenario: Successful login
-    When I provide "Username" as "tomsmith"
-    And I provide "Password" as "SuperSecretPassword!"
+    When I provide username as "tomsmith" and password as "SuperSecretPassword!"
     And I click on the "Login" button
-    Then I should see alert message "You logged out of the secure area!"
-#
-#  Scenario Outline: Failed login
-#    When I provide "Username" as "<username>"
-#    And I provide "Password" as "<password>"
-#    And I click on the "Login" button
-#    Then I should see "<alert>" message
-#    Examples:
-#      | username | password                     | alert                       |
-#      | Smith    | SuperSecretPassword!         | Your username is invalid!   |
-#      | tomsmith | SuperWrongPass               | Your password is invalid!   |
+    Then I should see alert message "You logged into a secure area!"
+
+  Scenario Outline: Failed login
+    When I provide username as "<username>" and password as "<password>"
+    And I click on the "Login" button
+    Then I should see "<alert>" message
+    Examples:
+      | username | password                     | alert                       |
+      | Smith    | SuperSecretPassword!         | Your username is invalid!   |
+      | tomsmith | SuperWrongPass               | Your password is invalid!   |
