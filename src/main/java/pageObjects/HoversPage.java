@@ -1,6 +1,5 @@
 package pageObjects;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,10 +20,6 @@ public class HoversPage {
 
     @FindBy(how = How.XPATH, using = "//div[@class='figcaption']/h5")
     public List <WebElement> captionList;
-
-    public List avatarsList() {
-        return driver.findElements(By.className("figure"));
-    }
 
     //Constructor
     public HoversPage(WebDriver driver) {

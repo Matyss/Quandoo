@@ -1,7 +1,6 @@
 package stepdefs;
 
 import com.quandoo.resources.Base;
-import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -33,14 +32,12 @@ public class HoversSteps extends Base {
     }
 
 
-    @When("^There are (\\d+) avatars on the page$")
+    @Given("^There are (\\d+) avatars on the page$")
     public void thereAreAvatarsOnThePage(int avatarsNum) {
-//        System.out.println(avatarsNum);
-//        System.out.println(hoversPageElements.avatarsList());
-//        Assert.assertEquals(avatarsNum, hoversPageElements.avatarsCount());
+        Assert.assertEquals(avatarsNum, hoversPageElements.avatarList.size());
     }
 
-    @And("^I hover over the avatar \"([^\"]*)\"$")
+    @When("^I hover over the avatar \"([^\"]*)\"$")
     public void iHoverOverTheAvatar(String arg0) {
         System.out.println("habla");
     }
