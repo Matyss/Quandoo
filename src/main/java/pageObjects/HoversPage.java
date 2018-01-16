@@ -11,7 +11,7 @@ import java.util.List;
 
 public class HoversPage {
 
-    //Webdriver declaration
+    //WebDriver declaration
     public WebDriver driver;
 
     @FindBy(how = How.XPATH, using = "//div[@class='example']/h3")
@@ -23,6 +23,20 @@ public class HoversPage {
     @FindBy(how = How.XPATH, using = "//div[@class='figcaption']/h5")
     public List <WebElement> captionList;
 
+    @FindBy(how = How.XPATH, using = "//h5")
+    public WebElement caption;
+
+    public WebElement avatar(int num) {
+        return driver.findElement(By.xpath("//div[@class='figure']["+num+"]"));
+    }
+
+    public void moveToElement(WebElement el) {
+        Actions move = new Actions(driver);
+        move.moveToElement(el).perform();
+    }
+
+//    This below method can be used in other scenarios where more avatars are used
+//    in order to check the entire list
     public boolean checkVisibility(List<WebElement> avatars) {
         boolean isVisible = true;
         for (WebElement avatar : avatars) {

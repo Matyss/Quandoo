@@ -30,20 +30,20 @@ public class HoversSteps extends Base {
         Assert.assertEquals(hoversTitle, hoversPageElements.hoversTitle.getText());
     }
 
-
+    //Scenario
     @Given("^There are (\\d+) avatars on the page$")
     public void thereAreAvatarsOnThePage(int avatarsNum) {
         Assert.assertEquals(avatarsNum, hoversPageElements.avatarList.size());
     }
 
-    @When("^I hover over the avatar number")
-    public void iHoverOverTheAvatar() throws InterruptedException {
-//        hoversPageElements.avatarList.forEach(item -> System.out.println(item.getAttribute("textContent").trim()));
-        Assert.assertTrue(hoversPageElements.checkVisibility(hoversPageElements.avatarList));
+    @When("^I hover over the avatar number (\\d+)")
+    public void iHoverOverTheAvatar(int avatarNum) throws InterruptedException {
+        hoversPageElements.moveToElement(hoversPageElements.avatar(avatarNum));
     }
 
-    @Then("^I should see caption \"([^\"]*)\" and \"([^\"]*)\"$")
-    public void iShouldSeeCaptionAnd(String arg0, String arg1) {
-        System.out.println("habla");
+    @Then("^I should see caption \"([^\"]*)\"$")
+    public void iShouldSeeCaption(String caption) {
+        Assert.assertTrue(hoversPageElements.caption.isDisplayed());
+        Assert.assertEquals(hoversPageElements.caption.getText(), caption);
     }
 }

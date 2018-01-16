@@ -10,5 +10,5 @@ Feature: Avatar hover caption
 
   Scenario: Hovering over the avatar
     Given There are 3 avatars on the page
-    When I hover over the avatar number
-    Then I should see caption "name: user" and "number"
+    When I hover over the avatar number 1
+    Then I should see caption "name: user1"
