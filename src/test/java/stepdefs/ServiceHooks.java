@@ -11,6 +11,7 @@ public class ServiceHooks extends Base {
     @Before
     public void initElements() throws IOException {
         driver = initDriver();
+        System.out.println("DRIVER INITIALIZED!!!");
     }
 
     @After

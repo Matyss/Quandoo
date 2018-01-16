@@ -27,7 +27,6 @@ public class HoversSteps extends Base {
 
     @Then("^I should see \"([^\"]*)\" title$")
     public void iShouldSeeTitle(String hoversTitle) {
-        System.out.println(hoversTitle);
         Assert.assertEquals(hoversTitle, hoversPageElements.hoversTitle.getText());
     }
 
@@ -37,9 +36,10 @@ public class HoversSteps extends Base {
         Assert.assertEquals(avatarsNum, hoversPageElements.avatarList.size());
     }
 
-    @When("^I hover over the avatar \"([^\"]*)\"$")
-    public void iHoverOverTheAvatar(String arg0) {
-        System.out.println("habla");
+    @When("^I hover over the avatar number")
+    public void iHoverOverTheAvatar() throws InterruptedException {
+//        hoversPageElements.avatarList.forEach(item -> System.out.println(item.getAttribute("textContent").trim()));
+        Assert.assertTrue(hoversPageElements.checkVisibility(hoversPageElements.avatarList));
     }
 
     @Then("^I should see caption \"([^\"]*)\" and \"([^\"]*)\"$")
