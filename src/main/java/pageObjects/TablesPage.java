@@ -39,13 +39,14 @@ public class TablesPage {
     }
 
     public List<String> reverseList(List<String> sortedList) {
-        ArrayList<String> someList = new ArrayList<>();
         Collections.reverse(sortedList);
-        return someList;
+        return sortedList;
     }
 
-    public void performSort(WebElement tableRowCell) {
-        tableRowCell.click();
+    public void performSort(WebElement tableRowCell, int numClicks) {
+        for(int i=0; i<numClicks; i++) {
+            tableRowCell.click();
+        }
     }
 
 

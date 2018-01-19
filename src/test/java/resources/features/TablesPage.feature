@@ -8,7 +8,12 @@ Feature: Sort the table alphabetically
     Given I am on tables page URL "http://the-internet.herokuapp.com/tables"
     Then I should see page "Data Tables" title
 
-    Scenario: Sorting in ascending order
-      Given There is a non-empty column with last names
-      When I click on the "Last Name" table header cell
-      Then I should see the list sorted in ascending order
+  Scenario: Sorting in ascending order
+    Given There is a non-empty column with last names
+    When I click on the "Last Name" table header cell 1 time
+    Then I should see the list sorted in ascending order
+
+  Scenario: Sorting in descending order
+    Given There is a non-empty column filled with last names
+    When I click on the "Last Name" table header 2 times
+    Then I should see the list sorted in descending order

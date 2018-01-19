@@ -55,6 +55,7 @@ public class Base {
 
         //Clearing and maximizing
         driver.manage().deleteAllCookies();
+        System.out.println("Maximizing");
         driver.manage().window().maximize();
 
         return driver;
