@@ -5,20 +5,22 @@ The task I was assigned to involved automation of sample web application.
 I decided to use modern and popular stack and develop my own framework following the Page Object Model and all good practices.
 Following technologies and tools have been used:
 
-_Java
-_Maven
-_TestNG
-_Cucumber
+- Java
+- Maven
+- TestNG
+- Cucumber
 
 All required dependencies are already there for you in pom.xml file
 
-<b>How to run the tests:</b>
-<ul>
-    <li>Clone this repo to your local directory</li>
-    <li>Make sure that Java8 and Maven are installed on your machine</li>
-    <li>Open terminal and type: mvn compile</li>
-    <li>Now you can fire up tests with: mvn test</li>
-</ul>
+####How to run the tests:
+
+- Clone this repo to your local directory
+    - change Base class FileInputStream attribute
+    - use System.setProperty and provide the path to drivers 
+- Make sure that Java8 and Maven are installed on your machine
+- Open terminal and type: mvn compile
+- Now you can fire up tests with: mvn test
+
 
 Remember to collect great reports that are available locally in:
 <i>target/cucumber-reports/advanced-reports</i>
