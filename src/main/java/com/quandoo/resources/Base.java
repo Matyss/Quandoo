@@ -25,13 +25,14 @@ public class Base {
 
         //Configuration object
         Properties props = new Properties();
-        FileInputStream inputFile = new FileInputStream("/Users/mateusz/Documents/Testing/Testing/Quandoo.nosync/src/main/java/com/quandoo/resources/configFile.properties");
+        FileInputStream inputFile = new FileInputStream("src/main/java/com/quandoo/resources/configFile.properties");
 
         props.load(inputFile);
         String browserName = props
                     .getProperty("browser")
                     .toLowerCase();
 
+        //Set the drivers' local path
         System.setProperty("webdriver.chrome.driver", "/Users/mateusz/Documents/Testing/chromedriver");
 
         switch (browserName) {
