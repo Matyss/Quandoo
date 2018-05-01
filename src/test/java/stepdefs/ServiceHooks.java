@@ -17,6 +17,5 @@ public class ServiceHooks extends Base {
     @After
     public void terminateSession() {
         driver.close();
-        driver = null;
     }
 }
