@@ -1,10 +1,14 @@
 package com.quandoo.resources;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.io.FileHandler;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
@@ -32,11 +36,9 @@ public class Base {
                     .getProperty("browser")
                     .toLowerCase();
 
-        //Set the drivers' local path
-        System.setProperty("webdriver.chrome.driver", "/Users/mateusz/Documents/Testing/chromedriver");
-
         switch (browserName) {
             case "chrome":
+                System.setProperty("webdriver.chrome.driver", "/Users/mateusz/Documents/Testing/chromedriver");
                 driver = new ChromeDriver();
                 choosenBrowserName(browserName);
                 break;
@@ -63,6 +65,11 @@ public class Base {
 
         return driver;
     }
+
+//    public void takeScreenshots(String failedMethod, long timeStamp) throws IOException {
+//        File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//        FileHandler.copy(source, new File("/Users/mateusz/Documents/Testing/Testing/Quandoo.nosync/"+failedMethod+"_"+timeStamp+"_failScreen.png"));
+//    }
 
 }
 

@@ -32,7 +32,7 @@
             <plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
-                <version>3.13.0</version>
+                <version>3.16.0</version>
                 <executions>
                     <execution>
                         <id>execution</id>
@@ -82,7 +82,7 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>3.7.1</version>
+            <version>3.11.0</version>
         </dependency>
 
         <dependency>
@@ -120,7 +120,7 @@
         <dependency>
             <groupId>net.masterthought</groupId>
             <artifactId>cucumber-reporting</artifactId>
-            <version>3.13.0</version>
+            <version>3.16.0</version>
         </dependency>
 
         <dependency>
