@@ -66,10 +66,10 @@ public class Base {
         return driver;
     }
 
-//    public void takeScreenshots(String failedMethod, long timeStamp) throws IOException {
-//        File source = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-//        FileHandler.copy(source, new File("/Users/mateusz/Documents/Testing/Testing/Quandoo.nosync/"+failedMethod+"_"+timeStamp+"_failScreen.png"));
-//    }
+    public void takeScreenshots(String failedMethod, long timeStamp) throws IOException {
+        File screenSource = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        FileHandler.copy(screenSource, new File("/Users/mateusz/Documents/Testing/Testing/Quandoo.nosync/"+failedMethod+"_"+timeStamp+"_failScreen.png"));
+    }
 
 }
 
